@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SideSwipeTabBar_Tests' do
+  pod 'SideSwipeTabBar', :path => '../'
+  
+  
+end
