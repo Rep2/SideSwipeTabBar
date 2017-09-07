@@ -1,6 +1,6 @@
 import UIKit
 
-class SideSwipeTabBarController: UITabBarController {
+open class SideSwipeTabBarController: UITabBarController {
     let percentDrivenInteractiveTransition = UIPercentDrivenInteractiveTransition()
 
     lazy var leftEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer = {
@@ -17,12 +17,12 @@ class SideSwipeTabBarController: UITabBarController {
         return edgePanGestureRecognizer
     }()
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
@@ -83,25 +83,25 @@ class SideSwipeTabBarController: UITabBarController {
 }
 
 extension SideSwipeTabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return isAnimating ? percentDrivenInteractiveTransition : nil
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return isAnimating ? self : nil
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         addGestureRecognizers(to: viewController)
     }
 }
 
 extension SideSwipeTabBarController: UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
 
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromViewController = transitionContext.viewController(forKey: .from),
             let toViewController = transitionContext.viewController(forKey: .to) else {
                 return
@@ -134,7 +134,7 @@ extension SideSwipeTabBarController: UIViewControllerAnimatedTransitioning {
             let indexOfFromViewController = viewControllers.index(of: fromViewController) {
             return indexOfFromViewController < indexOfToViewController ? .toRight : .toLeft
         }
-
+        
         return nil
     }
 }
