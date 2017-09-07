@@ -1,20 +1,16 @@
-# SideSwipeTabBar
+# SideSwipeTabBarController
 
-[![CI Status](http://img.shields.io/travis/Ivan Rep/SideSwipeTabBar.svg?style=flat)](https://travis-ci.org/Ivan Rep/SideSwipeTabBar)
-[![Version](https://img.shields.io/cocoapods/v/SideSwipeTabBar.svg?style=flat)](http://cocoapods.org/pods/SideSwipeTabBar)
-[![License](https://img.shields.io/cocoapods/l/SideSwipeTabBar.svg?style=flat)](http://cocoapods.org/pods/SideSwipeTabBar)
-[![Platform](https://img.shields.io/cocoapods/p/SideSwipeTabBar.svg?style=flat)](http://cocoapods.org/pods/SideSwipeTabBar)
+UITabBarController with side swipe.
 
-## Example
+![Alt Text](https://media.giphy.com/media/l378aiBJqhycXsga4/giphy.gif)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Usage
 
-## Requirements
+Simply inherit from `SideSwipeTabBarController`.
 
 ## Installation
 
-SideSwipeTabBar is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
 
 ```ruby
 pod 'SideSwipeTabBar'
