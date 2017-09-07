@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Ivan Rep' => 'ivan.rep2@gmail.com' }
   s.source           = { :git => 'https://github.com/Ivan Rep/SideSwipeTabBar.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '8.0'
   s.source_files = 'SideSwipeTabBar/Classes/**/*'
   s.frameworks = 'UIKit'
 end
