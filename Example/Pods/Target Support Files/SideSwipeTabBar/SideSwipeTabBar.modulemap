@@ -1,0 +1,6 @@
+framework module SideSwipeTabBar {
+  umbrella header "SideSwipeTabBar-umbrella.h"
+
+  export *
+  module * { export * }
+}
