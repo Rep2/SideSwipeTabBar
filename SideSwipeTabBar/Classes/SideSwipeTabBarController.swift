@@ -47,6 +47,7 @@ open class SideSwipeTabBarController: UITabBarController {
     var edgePanGestureRecognizerStartLocation: CGPoint?
     var isAnimating = false
 
+    @objc
     func didPan(edgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer) {
         let xOffset = (edgePanGestureRecognizerStartLocation?.x ?? 0) - edgePanGestureRecognizer.location(in: edgePanGestureRecognizer.view).x
         let percentage = 1 - abs(xOffset / (edgePanGestureRecognizer.view?.bounds.width ?? 320)).inBetween(minimumValue: 0, maximumValue: 1)
